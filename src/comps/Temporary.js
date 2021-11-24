@@ -4,10 +4,13 @@ import useFirestore from '../hooks/useFirestore';
 const Temporary = () => {
   const { docs } = useFirestore('pastries');
 
-  console.log(docs)
   return ( 
     <div className="temp">
-      temp
+      {docs.map((doc)=>(
+        <div key={doc.id}>
+          <img src={doc.url} alt={doc.pastry}/>
+        </div>
+      ))}
     </div>
    );
 }

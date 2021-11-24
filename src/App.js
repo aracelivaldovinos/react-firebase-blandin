@@ -1,11 +1,13 @@
-import AddForm from "./comps/AddForm";
-import Temporary from "./comps/Temporary";
+// import AddForm from "./comps/AddForm";
+import Homepage from "./comps/Homepage/Homepage";
+// import Temporary from "./comps/Temporary";
 
 function App() {
   return (
     <div className="App">
-      <AddForm />
-      <Temporary />
+      {/* <AddForm />
+      <Temporary /> */}
+      <Homepage />
     </div>
   );
 }

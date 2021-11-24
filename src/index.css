@@ -1,1 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
+.navbar-header {
+  text-align: center;
+  background-color: white;
+  padding: 5px;
+  border-radius: 50%;
+  width: 175px;
+  height: 175px;
+  padding-top: 15px;
+  background-color: #061A29;
+  border-style: solid;
+  border-width: 5px;
+  border-color: #827353;
+}
+.navbar-header .header1{
+  font-family: 'Great Vibes', cursive;
+  font-weight: 600;
+  color: #827353;
+}
+
+.navbar-header .header2{
+  font-family: 'Great Vibes', cursive; 
+  font-weight: 600;
+  color: #827353;
+}

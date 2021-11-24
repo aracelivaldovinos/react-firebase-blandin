@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { projectStorage, projectFirestore, timestamp } from '../firebase/config';
 
 const useStorage = (file, celebrationType, pastryType, description) => {
-  console.log(file)
   const [url, setUrl] = useState(null);
   const [error, setError] = useState(null);
   const [progress, setProgress] = useState(0);
