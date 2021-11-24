@@ -10,27 +10,28 @@ const AddForm = () => {
 
   const types = ['image/png', 'image/jpeg'];
 
-  const changeHandler = (e) =>{
+  const handleSubmit = (e) =>{
     e.preventDefault();
-    let selected = e.target.files[0];
-    console.log(selected)
-
+    
+    let selected = e.target[2].files[0];
     if (selected && types.includes(selected.type)) {
-      setFile(selected);
-      setError('')
-    }else{
-      setFile(null);
-      setError('Please select an image file (png or jpeg)');
-
-    }
+          setFile(selected);
+          setError('')
+        }else{
+          setFile(null);
+          setError('Please select an image file (png or jpeg)');
+    
+        }
+    setCelebrationType(e.target.celebration.value);
+    setPastryType(e.target.pastry.value);
+    setDescription(e.target.description.value);
   }
 
   return ( 
     <div className="add-form">
-        <form> 
+        <form onSubmit={handleSubmit}> 
           <select
-            value={celebrationType}
-            onChange={(e) => setCelebrationType(e.target.value)}
+            name="celebration"
           >
             <option>Wedding</option>
             <option>Birthday</option>
@@ -40,8 +41,7 @@ const AddForm = () => {
             <option>Holiday</option>
           </select>
           <select
-            value={pastryType}
-            onChange={(e) => setPastryType(e.target.value)}
+            name="pastry"
           >
             <option>Cake</option>
             <option>Cupcakes</option>
@@ -52,26 +52,24 @@ const AddForm = () => {
           </select>
           <input
             type="file"
-            onChange={changeHandler}
           />
+    
           <textarea
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
+            name="description"
           />
           <input type="submit"/>
-
           <div className="output">
-          {error && <div className="error"> {error}</div>}
-          {file && <div className="file"> {file.name}</div>}
-          {file &&
-           <ProgressBar 
-            file={file} 
-            setFile={setFile} 
-            celebrationType={celebrationType}
-            pastryType={pastryType}
-            description={description}
-            />}
-        </div>
+            {error && <div className="error"> {error}</div>}
+            {file && <div className="file"> {file.name}</div>}
+            {file &&
+            <ProgressBar 
+              file={file} 
+              setFile={setFile}
+              celebrationType={celebrationType}
+              pastryType={pastryType}
+              description={description} 
+              />}
+          </div>
         </form>
     </div>
    );

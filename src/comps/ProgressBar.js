@@ -10,10 +10,10 @@ const ProgressBar = ({file, setFile, celebrationType, pastryType, description}) 
       setFile(null)
     }
   }, [url, setFile])
-  
+
   return ( 
     <div className="progress-bar">
-      
+      progress
     </div>
    );
 }
