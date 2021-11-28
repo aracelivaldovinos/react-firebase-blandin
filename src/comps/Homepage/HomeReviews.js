@@ -1,8 +1,11 @@
-import { useState } from 'react';
+import useFirestore from '../../hooks/useFirestore';
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
 
-const HomeReviews = ({reviews}) => {
+const HomeReviews = () => {
 
-  const [pastryReview, setPastryReview] = useState([]);
+  const { reviews } = useFirestore('Reviews');
+  console.log(reviews)
 
   const fiveStars = "★★★★★"
   const fourStars = "★★★★"
@@ -11,8 +14,10 @@ const HomeReviews = ({reviews}) => {
   const oneStar = "★"
 
 
-  let dupReviews =  [...reviews]
-  let array = []
+  let dupReviews =  [...reviews];
+  let array = [];
+  let items = [];
+
   dupReviews.forEach((review)=>{
     if (review.rating === fiveStars.length){
       array.push([review.firstname, review.lastname, review.body, fiveStars])
@@ -29,26 +34,35 @@ const HomeReviews = ({reviews}) => {
     else if (review.rating === oneStar.length){
       array.push([review.firstname, review.lastname, review.body, oneStar])
     }
+  });
+
+  array.forEach((item)=>{
+    items.push( 
+    <div className="item" data-value="1">
+      <h1>{item[0]} {item[1]}</h1>
+      <p>{item[2]}</p>
+      <h2>{item[3]}</h2>
+    </div>)
+
   })
 
-  
+  console.log(array)
+  console.log(items)
+
   return (  
     <div className="reviews">
-      <div id="slideset1">
-        {/* <div>
-          <h1>{pastryReview[0][0]} {pastryReview[0][1]}</h1>
-          <p>{pastryReview[0][2]}</p>
-          <p>{pastryReview[0][3]}</p>
-        </div>
-        <div>
-          <h1>{pastryReview[1][0]} {pastryReview[1][1]}</h1>
-          <p>{pastryReview[1][2]}</p>
-          <p>{pastryReview[1][3]}</p>
-        </div> */}
-        <div>
-          <h1>This is slide number 3</h1>
-          <p>Slide number 3</p>
-        </div>
+      <div className="review-div">
+        <AliceCarousel
+            autoPlay
+            autoPlayStrategy="none"
+            autoPlayInterval={1000}
+            animationDuration={1000}
+            infinite
+            touchTracking={false}
+            disableDotsControls
+            disableButtonsControls
+            items={items}
+        />
       </div>
     </div>
   );
