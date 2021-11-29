@@ -1,7 +1,6 @@
 import AliceCarousel from 'react-alice-carousel';
-// import 'react-alice-carousel/lib/alice-carousel.css';
 import useFirestore from '../../hooks/useFirestore';
-
+import {Link} from 'react-router-dom';
 
 const HomeGallery = () => {
   const {pastry} = useFirestore('pastries');
@@ -16,12 +15,18 @@ const items = [];
 
 pastry &&  pastry.forEach((item)=>{
     items.push(<div className="item" data-value="6"><img src={item.url} alt={item.pastry} /></div>)
-  })
+  });
 
-
-// console.log(items)
   return ( 
     <div className="home-gallery">
+      <div className="section-title">
+        <h2>View all my pastries in the
+          <span>gallery!</span>
+        </h2>
+        <p>
+          Click <Link to="/gallery">here.</Link>
+        </p>
+        </div>
       <AliceCarousel
         mouseTracking
         items={items}

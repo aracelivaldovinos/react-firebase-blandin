@@ -3,12 +3,19 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
+// import { Container } from 'react-bootstrap';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <div style={{ backgroundImage: "url(/background.jpeg)" }}>
-    <App />
+    <div style={{ 
+      backgroundImage: "url(/background.jpeg)", 
+      backgroundRepeat: "repeat"
+    }}
+    >
+      {/* <Container> */}
+        <App />
+      {/* </Container> */}
     </div>
   </React.StrictMode>,
   document.getElementById('root')

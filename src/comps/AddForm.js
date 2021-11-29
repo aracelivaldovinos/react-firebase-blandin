@@ -10,6 +10,7 @@ const AddForm = () => {
 
   const types = ['image/png', 'image/jpeg'];
 
+
   const handleSubmit = (e) =>{
     e.preventDefault();
     

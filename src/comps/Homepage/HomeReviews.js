@@ -1,6 +1,6 @@
 import useFirestore from '../../hooks/useFirestore';
 import AliceCarousel from 'react-alice-carousel';
-import 'react-alice-carousel/lib/alice-carousel.css';
+import { Link } from 'react-router-dom';
 
 const HomeReviews = () => {
 
@@ -51,6 +51,13 @@ const HomeReviews = () => {
 
   return (  
     <div className="reviews">
+      <div className="section-title">
+        <h2>Checkout what people have to say about my <span>pastries!</span></h2>
+        <p>
+          Want to leave a review?
+          Click <Link to="/review">here.</Link>
+        </p>
+      </div>
       <div className="review-div">
         <AliceCarousel
             autoPlay
@@ -63,7 +70,7 @@ const HomeReviews = () => {
             disableButtonsControls
             items={items}
         />
-      </div>
+      </div>  
     </div>
   );
 }

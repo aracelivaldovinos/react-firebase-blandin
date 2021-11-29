@@ -1,7 +1,6 @@
-import  useFirestore  from '../../hooks/useFirestore';
-const Gallery = () => {
-const {pastry} = useFirestore('pastries');
-// console.log(pastry)
+
+const Gallery = ({pastry}) => {
+
   return ( 
     <div className="gallery">
       <div className="grid-gallery">

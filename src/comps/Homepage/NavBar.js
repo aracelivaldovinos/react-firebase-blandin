@@ -1,10 +1,14 @@
-
+import { Link } from 'react-router-dom';
 import { Container, Navbar, Nav } from 'react-bootstrap';
 import '../../index.css'
 
 
 
 const NavBar = () => {
+  // const handleGallery = () =>{
+  //   setSelectGallery(false);
+  //   setGallery(true);
+  // }
   return ( 
       <Navbar className="navbar" collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
@@ -18,10 +22,10 @@ const NavBar = () => {
           <Navbar.Toggle aria-controls="responsive-navber-nav" />
           <Navbar.Collapse id="responsive-navber-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#gallery">Gallery</Nav.Link>
-            <Nav.Link href="#menu">Menu</Nav.Link>
-            <Nav.Link href="#contact">Contact</Nav.Link>
+            <Nav.Link href="http://localhost:3000/">Home</Nav.Link>
+            <Nav.Link href="http://localhost:3000/gallery" >Gallery</Nav.Link>
+            <Nav.Link href="http://localhost:3000/menu">Menu</Nav.Link>
+            <Nav.Link href="http://localhost:3000/contact">Contact</Nav.Link>
           </Nav>
           </Navbar.Collapse>
         </Container>
