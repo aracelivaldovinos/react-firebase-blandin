@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import {BsInstagram, BsFillTelephoneFill} from 'react-icons/bs';
 import {FaSnapchat, FaFacebook} from 'react-icons/fa';
 import {GrGithub} from 'react-icons/gr';

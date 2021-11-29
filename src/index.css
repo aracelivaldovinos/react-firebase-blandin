@@ -156,6 +156,11 @@ section{
   position: relative;
 }
 
+.menu .flavor-content .extra-info {
+  text-align: center;
+  font-weight: bold;
+}
+
 .menu .menu-content::after {
   content: "......................................................................" "...................................................................." "....................................................................";
   position: absolute;
@@ -174,7 +179,7 @@ section{
   position: relative;
   z-index: 3;
   font-weight: 700;
-  color: #a4133c;
+  color: #061A29;
 }
 .menu .menu-content span {
   background: #fff;
@@ -425,6 +430,11 @@ label{
 }
 
 .footer{
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.menu-div{
   margin-left: 30px;
   margin-right: 30px;
 }

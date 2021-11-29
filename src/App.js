@@ -12,6 +12,8 @@ import Navbar from "./comps/Homepage/NavBar";
 import Footer from "./comps/Homepage/Footer";
 import Gallery from "./comps/Gallery/Gallery";
 import FilteredGallery from './comps/Gallery/FilteredGallery';
+import Menu from './comps/Menu/Menu';
+
 
 
 
@@ -38,6 +40,7 @@ function App() {
         <Route exact path="/" element={<Homepage handleHomeIcons={handleHomeIcons} />}/>
          <Route path="/gallery" element={<Gallery pastry={pastry}/>}/>
          <Route path="/gallery/:icon" element={<FilteredGallery filterGallery={filterGallery}/> }/>
+         <Route path="/menu" element={<Menu />}/>
         <Route path="/review" element={<AddReview />}/>
         <Route exact path="/contact" element={<ContactForm />}/>
         </Routes>
