@@ -1,43 +1,33 @@
+import { Link } from 'react-router-dom';
+import {BsInstagram, BsFillTelephoneFill} from 'react-icons/bs';
+import {FaSnapchat, FaFacebook} from 'react-icons/fa';
+import {GrGithub} from 'react-icons/gr';
+
 const Footer = () => {
   return ( 
-    <div class="container my-5">
+    <div className="footer">
+      <footer className="bg-dark text-center text-white">
+        <div className="container p-1 pb-0">
+          <section className="mb-2">
+            <a className="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/blancasroyalpastries/?hl=en" role="button"
+              ><BsInstagram/></a>
 
-  <footer class="bg-dark text-center text-white">
-  <div class="container p-4 pb-0">
-    <section class="mb-4">
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-facebook-f"></i
-      ></a>
+            <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><FaSnapchat/></a>
 
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-twitter"></i
-      ></a>
+            <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><FaFacebook/></a>
 
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-google"></i
-      ></a>
-
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-instagram"></i
-      ></a>
-
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-linkedin-in"></i
-      ></a>
-
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-github"></i
-      ></a>
-    </section>
-  </div>
-
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2020 Copyright:
-    <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-  </div>
-</footer>
-  
-</div>
+            <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><BsFillTelephoneFill/></a>
+          </section>
+        </div>
+        <div className="text-center p-1" style={{BackgroundColor: "rgba(0, 0, 0, 0.2)"}}>
+          © 2021 Copyright:
+          <a className="text-white" href="https://github.com/aracelivaldovinos"> Araceli Valdovinos <GrGithub/></a>
+        </div>
+      </footer>
+    </div>
    );
 }
  

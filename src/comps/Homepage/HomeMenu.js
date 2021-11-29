@@ -4,7 +4,7 @@ const HomeMenu = () => {
   return ( 
     <section className="menu" id="menu">
       <Container>
-        <div class="section-title">
+        <div className="section-title">
           <h2>
             Check out the <span>Menu</span>
           </h2>
@@ -27,7 +27,7 @@ const HomeMenu = () => {
                 </div>
               </div>
               <div className="col-lg-6 menu-item">
-                <div class="menu-content">
+                <div className="menu-content">
                   <p>
                     10" Round/Square (28 servings)
                   </p>
@@ -36,7 +36,7 @@ const HomeMenu = () => {
               </div>
             </Row>
           </div>
-          <div class="cake-info">
+          <div className="cake-info">
             •••PLEASE INQUIRE FOR ADDITIONAL SIZES•••
             FOR TIERED, SCULPED, AND GRAVITY DEFYING CAKES PLEASE INQUIRE FOR A QUOTE ON THE PARTICULAR DESIGN YOU ARE INTERESTED IN
           </div>
@@ -46,13 +46,13 @@ const HomeMenu = () => {
         </h2>
         <div className="row menu-container">
           <Row>
-            <div class="col-lg-6 menu-item">
-              <div class="menu-content">
+            <div className="col-lg-6 menu-item">
+              <div className="menu-content">
                 <p>Texas Size Cupcakes (2.5 std cupcakes in 1)</p><span>$25+/dozen</span>
               </div>
             </div>
-            <div class="col-lg-6 menu-item">
-              <div class="menu-content">
+            <div className="col-lg-6 menu-item">
+              <div className="menu-content">
                 <p>Tipsy Cupcakes (infused with your favorite alcohol)</p><span>$35+/dozen</span>
               </div>
             </div>
@@ -63,8 +63,8 @@ const HomeMenu = () => {
         </h2>
         <div className="row menu-container">
           <Row>
-            <div class="menu-item">
-              <div class="menu-content">
+            <div className="menu-item">
+              <div className="menu-content">
                 <p>Approx. 15" x 12" Double layered with filling (15-20 servings)</p><span>$25+/dozen</span>
               </div>
             </div>
@@ -75,12 +75,12 @@ const HomeMenu = () => {
         </h2>
         <div className="row menu-container">
           <Row>
-            <div class="col-lg-6 menu-item">
-              <div class="menu-content">
+            <div className="col-lg-6 menu-item">
+              <div className="menu-content">
               <p>Classic Pops</p><span>$28+/dozen</span>              </div>
             </div>
-            <div class="col-lg-6 menu-item">
-              <div class="menu-content">
+            <div className="col-lg-6 menu-item">
+              <div className="menu-content">
                 <p>Fancy Pops (infused with your favorite alcohol)</p><span>$40+/dozen</span>
               </div>
             </div>
@@ -91,13 +91,13 @@ const HomeMenu = () => {
         </h2>
         <div className="row menu-container">
           <Row>
-            <div class="col-lg-6 menu-item">
-              <div class="menu-content">
+            <div className="col-lg-6 menu-item">
+              <div className="menu-content">
                 <p>24 Count</p><span>$38+</span>
               </div>
             </div>
-            <div class="col-lg-6 menu-item">
-              <div class="menu-content">
+            <div className="col-lg-6 menu-item">
+              <div className="menu-content">
                 <p>36 Count</p><span>$50+/dozen</span>
               </div>
             </div>
@@ -108,13 +108,13 @@ const HomeMenu = () => {
         </h2>
         <div className="row menu-container">
           <Row>
-            <div class="col-lg-6 menu-item">
-              <div class="menu-content">
+            <div className="col-lg-6 menu-item">
+              <div className="menu-content">
                 <p>12" Chocolate Chip</p><span>$20+</span>
               </div>
             </div>
-            <div class="col-lg-6 menu-item">
-              <div class="menu-content">
+            <div className="col-lg-6 menu-item">
+              <div className="menu-content">
                 <p>12" Sugar Cookie</p><span>$20+/dozen</span>
               </div>
             </div>

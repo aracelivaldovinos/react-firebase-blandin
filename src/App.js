@@ -42,7 +42,7 @@ function App() {
         <Route exact path="/contact" element={<ContactForm />}/>
         </Routes>
       </Router>
-      {/* <Footer/> */}
+      <Footer/>
     </div>
   );
 }
