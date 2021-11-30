@@ -1,7 +1,7 @@
 import { Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const Icons = ({handleIcons}) => {
+const HomeIcons = ({handleIcons}) => {
   return ( 
     <section className="pastry-types" id="pastry-types">
       <div className="section-title">
@@ -41,7 +41,9 @@ const Icons = ({handleIcons}) => {
           <Link to='/gallery/number & letter cakes' onClick={()=>handleIcons("Number & Letter cakes")}>
             <div class="box">
               <span>Number & Letter Cakes</span>
-              <p class="font-icons">Number & Letter cakes icon</p>
+              <p class="font-icons">
+                <img src="https://img.icons8.com/ios/48/000000/sentence-case.png" alt="Number & Letter cakes"/>
+              </p>
             </div>
           </Link>
         </Col>
@@ -59,7 +61,8 @@ const Icons = ({handleIcons}) => {
           <Link to='/gallery/cupcake cakes' onClick={()=>handleIcons("Cupcake Cakes")}>
             <div class="box">
               <span>Cupcake Cakes</span>
-              <p class="font-icons">Cupcake cakes icon</p>
+              <p class="font-icons">
+                <img src="https://img.icons8.com/external-vitaliy-gorbachev-flat-vitaly-gorbachev/50/000000/external-cake-sweet-vitaliy-gorbachev-flat-vitaly-gorbachev.png" alt="cakecupcakes-icon"/>              </p>
             </div>
           </Link>
         </Col>
@@ -78,4 +81,4 @@ const Icons = ({handleIcons}) => {
    );
 }
  
-export default Icons;
+export default HomeIcons;

@@ -1,15 +1,13 @@
-import { Link } from 'react-router-dom';
 import { Container, Navbar, Nav } from 'react-bootstrap';
 import '../../index.css'
 
 
 
 const NavBar = () => {
-  // const handleGallery = () =>{
-  //   setSelectGallery(false);
-  //   setGallery(true);
-  // }
+
   return ( 
+    <>
+    <div className="navbar-div">
       <Navbar className="navbar" collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
           <Navbar.Brand href="#home">
@@ -30,6 +28,8 @@ const NavBar = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+    </div>
+    </>
    );
 }
  

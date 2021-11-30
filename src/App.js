@@ -6,13 +6,13 @@ import ContactForm from './comps/Contact/ContactForm';
 // import AddForm from "./comps/AddForm";
 import Homepage from "./comps/Homepage/Homepage";
 import AddReview from './comps/Reviews/AddReview';
-// import Temporary from "./comps/Temporary";
 import HeroImage from "./comps/Homepage/HeroImage";
 import Navbar from "./comps/Homepage/NavBar";
 import Footer from "./comps/Homepage/Footer";
 import Gallery from "./comps/Gallery/Gallery";
 import FilteredGallery from './comps/Gallery/FilteredGallery';
 import Menu from './comps/Menu/Menu';
+import Dashboard from './comps/Admin/Dashboard';
 
 
 
@@ -36,13 +36,13 @@ function App() {
       {/* <AddForm /> */}
       <Router>
         <Routes>
-        {/* <Temporary /> */}
-        <Route exact path="/" element={<Homepage handleHomeIcons={handleHomeIcons} />}/>
-         <Route path="/gallery" element={<Gallery pastry={pastry}/>}/>
-         <Route path="/gallery/:icon" element={<FilteredGallery filterGallery={filterGallery}/> }/>
-         <Route path="/menu" element={<Menu />}/>
-        <Route path="/review" element={<AddReview />}/>
-        <Route exact path="/contact" element={<ContactForm />}/>
+          <Route exact path="/" element={<Homepage handleHomeIcons={handleHomeIcons} />}/>
+          <Route path="/gallery" element={<Gallery pastry={pastry}/>}/>
+          <Route path="/gallery/:icon" element={<FilteredGallery filterGallery={filterGallery}/> }/>
+          <Route path="/menu" element={<Menu />}/>
+          <Route path="/review" element={<AddReview />}/>
+          <Route exact path="/contact" element={<ContactForm />}/>
+          <Route path="/admin/dashboard" element={<Dashboard />}/>
         </Routes>
       </Router>
       <Footer/>

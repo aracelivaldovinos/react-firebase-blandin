@@ -20,8 +20,8 @@ pastry &&  pastry.forEach((item)=>{
   return ( 
     <div className="home-gallery">
       <div className="section-title">
-        <h2>View all my pastries in the
-          <span>gallery!</span>
+        <h2>
+          View all my pastries in the <span>gallery!</span>
         </h2>
         <p>
           Click <Link to="/gallery">here.</Link>

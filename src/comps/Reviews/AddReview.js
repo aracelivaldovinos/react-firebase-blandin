@@ -27,7 +27,7 @@ const AddReview = () => {
 
   return ( 
     <div className="add-review">
-      <div className="content">
+      <div className="content"></div>
       <section className="contact" id="container">
         <div className="container mt-5">
           <div className="info-wrap">
@@ -60,7 +60,6 @@ const AddReview = () => {
         </form>
         </div>
       </section>
-      </div>
     </div>
    );
 }

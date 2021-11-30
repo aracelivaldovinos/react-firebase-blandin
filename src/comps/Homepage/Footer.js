@@ -7,13 +7,11 @@ const Footer = () => {
     <div className="footer">
       <footer className="bg-dark text-center text-white">
         <div className="container p-1 pb-0">
-          <section className="mb-2">
+          <section className="mb-1">
             <a className="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/blancasroyalpastries/?hl=en" role="button"
               ><BsInstagram/></a>
-
             <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button"
               ><FaSnapchat/></a>
-
             <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button"
               ><FaFacebook/></a>
 
