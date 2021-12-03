@@ -2,9 +2,10 @@ import { Row, Col } from 'react-bootstrap';
 import {AiFillHome} from 'react-icons/ai';
 import { useState } from 'react';
 
-const DashboardNav = ({handlePastries, pastry}) => {
+const DashboardNav = ({handlePastries, handleReviews, pastry, reviews}) => {
 
   let pastryLength = (pastry.length);
+  let reviewsLength = (reviews.length)
   
 
   return ( 
@@ -41,10 +42,10 @@ const DashboardNav = ({handlePastries, pastry}) => {
         </Row>
         <Row className="model-name-entry-2">
           <Col className="col-model-name">
-            <p>Reviews</p>
+            <p onClick={handleReviews}>Reviews</p>
           </Col>
-          <Col>
-            <p>Reviews Records</p>
+          <Col className="col-records">
+            <p>{reviewsLength}</p>
           </Col>
         </Row>
         <Row className="model-name-entry-3">

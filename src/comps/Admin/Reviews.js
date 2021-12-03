@@ -1,19 +1,16 @@
 import React from 'react';
-import useFirestore from '../../hooks/useFirestore';
 import { Col ,Row } from 'react-bootstrap';
-import {FaList} from 'react-icons/fa'
-import {AiFillFileAdd} from 'react-icons/ai'
+import {FaList} from 'react-icons/fa';
 
-const List = ({ handlePastryForm, handleDeletePastry, handleModal, handleDashboard}) => {
 
-  const { pastry } = useFirestore('pastries');
+const Reviews = ({handleDashboard, handleDeleteReview, reviews}) => {
 
   return ( 
     <div className="dashboard-nav">
-      <h1>List of Pastries</h1>
+      <h1>Reviews</h1>
       <Row>
         <div className="dashboard-div">
-          <p><span onClick={handleDashboard}>Dashboard</span> / <span>Pastries</span></p>
+          <p><span onClick={handleDashboard}>Dashboard</span></p>
         </div>
       </Row>
       <Row>
@@ -23,42 +20,40 @@ const List = ({ handlePastryForm, handleDeletePastry, handleModal, handleDashboa
           </div>
         </Col >
         <Col className="dashboard-col-2">
-          <p onClick={handlePastryForm}> <AiFillFileAdd/> Add</p>
         </Col>
       </Row>
       <Row>
       <Col className="col-header">
-          <p>Pastry</p>
+          <p>First name</p>
         </Col>
         <Col className="col-header">
-          <p>Celebration</p>
+          <p>Last name</p>
         </Col>
         <Col className="col-header">
-          <p>Description</p>
+          <p>Content</p>
         </Col>
         <Col className="col-header">
-          <p>Url</p>
+          <p>Rating</p>
         </Col>
       </Row>
       <div className="pastry-list">
-         {pastry.map((doc)=>(
+         {reviews.map((doc)=>(
           <div key={doc.id}>
             <Row className="item-row">
               <Col xs={2}>
-                <button onClick={()=>handleDeletePastry(doc.id)} className="btn btn-danger">Delete</button>
-                <button className="btn btn-warning">Edit</button>
+                <button onClick={()=>handleDeleteReview(doc.id)} className="btn btn-danger">Delete</button>
               </Col>
               <Col xs={2}>
-                <p>{doc.pastry}</p>
+                <p>{doc.firstname}</p>
               </Col>
               <Col xs={2}>
-                <p>{doc.celebration}</p>
+                <p>{doc.lastname}</p>
               </Col>
               <Col sm={3}>
-                <p>{doc.description}</p>
+                <p>{doc.body}</p>
               </Col>
               <Col sm={3}>
-                <p onClick={()=>handleModal(doc.id)}>{doc.url}</p>
+                <p>{doc.rating}</p>
               </Col>
             </Row> 
           </div>
@@ -68,4 +63,4 @@ const List = ({ handlePastryForm, handleDeletePastry, handleModal, handleDashboa
    );
 }
  
-export default List;
+export default Reviews;

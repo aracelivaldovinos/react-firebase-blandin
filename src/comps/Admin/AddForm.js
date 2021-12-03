@@ -4,7 +4,7 @@ import {Row, Col} from 'react-bootstrap';
 import {FaList} from 'react-icons/fa'
 import {AiFillFileAdd} from 'react-icons/ai'
 
-const AddForm = () => {
+const AddForm = ({handlePastries, handleDashboard}) => {
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null)
   const [celebrationType, setCelebrationType]= useState('');
@@ -36,13 +36,13 @@ const AddForm = () => {
       <h1>Add Pastry</h1>
       <Row>
         <div className="dashboard-div">
-          <p><span>Dashboard</span> / <span>Pastries</span> / <span>New</span></p>
+          <p><span onClick={handleDashboard}>Dashboard</span> / <span onClick={handlePastries}>Pastries</span> / <span>New</span></p>
         </div>
       </Row>
       <Row>
         <Col sm={2} className="dashboard-col-1-add">
           <div className="dashboard-icon">
-            <p> <FaList/> List</p>
+            <p onClick={handlePastries}> <FaList/> List</p>
           </div>
         </Col >
         <Col sm={2} className="dashboard-col-2-add">
