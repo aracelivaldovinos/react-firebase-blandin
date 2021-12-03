@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import ProgressBar from './ProgressBar';
+import {Row, Col} from 'react-bootstrap';
+import {FaList} from 'react-icons/fa'
+import {AiFillFileAdd} from 'react-icons/ai'
 
 const AddForm = () => {
   const [file, setFile] = useState(null);
@@ -29,20 +32,56 @@ const AddForm = () => {
   }
 
   return ( 
-    <div className="add-form">
+    <div className="dashboard-nav">
+      <h1>Add Pastry</h1>
+      <Row>
+        <div className="dashboard-div">
+          <p><span>Dashboard</span> / <span>Pastries</span> / <span>New</span></p>
+        </div>
+      </Row>
+      <Row>
+        <Col sm={2} className="dashboard-col-1-add">
+          <div className="dashboard-icon">
+            <p> <FaList/> List</p>
+          </div>
+        </Col >
+        <Col sm={2} className="dashboard-col-2-add">
+          <p> <AiFillFileAdd/> Add</p>
+        </Col>
+        <Col className="dashboard-col-1-add">
+        </Col>
+      </Row>
+      <Row>
+      <div className="add-form">
         <form onSubmit={handleSubmit}> 
-          <select
-            name="celebration"
-          >
-            <option>Wedding</option>
-            <option>Birthday</option>
-            <option>Work Event</option>
-            <option>Mother's Day\Fatherls Day</option>
-            <option>Bachelorette\Bachelor</option>
-            <option>Holiday</option>
-          </select>
+        <Row>
+          <Col sm={2}>
+            <label>Celebration Type:</label>
+          </Col>
+          <Col sm={4}>
+            <select
+              name="celebration"
+              required
+              className="form-control"
+            >
+              <option>Wedding</option>
+              <option>Birthday</option>
+              <option>Work Event</option>
+              <option>Mother's Day\Fatherls Day</option>
+              <option>Bachelorette\Bachelor</option>
+              <option>Holiday</option>
+            </select>
+          </Col>
+        </Row>
+        <Row>
+          <Col sm={2}>
+            <label>Pastry Type</label>
+          </Col>
+          <Col sm={4}>
           <select
             name="pastry"
+            required
+            className="form-control"
           >
             <option>Cake</option>
             <option>Cupcakes</option>
@@ -51,14 +90,37 @@ const AddForm = () => {
             <option>Cakepops</option>
             <option>Cookie cakes</option>
           </select>
-          <input
-            type="file"
-          />
-    
+          </Col>
+        </Row>
+          <Row>
+          <Col sm={2}>
+          <label>Description:</label>
+          </Col>
+          <Col sm={6} style={{float:"right"}}>
           <textarea
             name="description"
+            required
+            placeholder="This is the most chocolatiest chocolate cake..."
+            style={{height:"50vh", width:"100%"}}
+            className="form-control"
           />
-          <input type="submit"/>
+          </Col>
+          </Row>
+          <Row>
+            <Col sm={2}>
+              <label>Image:</label>
+            </Col>
+            <Col>
+            <input
+            type="file"
+            style={{paddingTop:"10px"}}
+            required
+          />
+            </Col>
+          </Row>
+          <div className="submit-form">
+            <input type="submit" className="btn btn-info"/>
+          </div>
           <div className="output">
             {error && <div className="error"> {error}</div>}
             {file && <div className="file"> {file.name}</div>}
@@ -72,7 +134,10 @@ const AddForm = () => {
               />}
           </div>
         </form>
+      </div>
+    </Row>
     </div>
+    
    );
 }
  

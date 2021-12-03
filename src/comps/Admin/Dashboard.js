@@ -2,64 +2,64 @@ import { Col, Row } from 'react-bootstrap';
 import List from './List';
 import { useState } from 'react';
 import AddForm from './AddForm';
+import { projectFirestore } from '../../firebase/config';
+import useFirestore from '../../hooks/useFirestore';
+import Modal from './Modal';
+import DashboardNav from './DashboardNav';
+
 const Dashboard = () => {
-  const [addPastry, setAddPastry] = useState(false);
+  const {pastry} = useFirestore('pastries')
+
+  const [dashboardNav, setDashboardNav] = useState(true);
   const [pastryList, setPastryList] = useState(true);
+  const [reviews, setReviews] = useState(false);
+  const [orders, setOrders] = useState(false);
+
+  const [filterPastry, setFilterPastry] = useState(null);
+  const [pastryImg, setPastryImg] = useState(true);
+  const [addPastry, setAddPastry] = useState(false);
 
   const handlePastryForm = () =>{
     setPastryList(false);
+    setDashboardNav(false);
     setAddPastry(true);
-  }
+  };
 
   const handleDeletePastry = (id) =>{
-    console.log(id)
+    projectFirestore.collection('pastries').doc(id).delete();
+  };
+
+  const handleModal = (id) =>{
+    const filteredPastry = pastry.filter((item)=>(item.id === id));
+    setFilterPastry(filteredPastry);
+    setPastryImg(true);
+  };
+
+  const handlePastries = () => {
+    setDashboardNav(false);
+    setPastryList(true);
   }
+
 
   return ( 
     <div className="dashboard" style={{backgroundColor: "#fff"}}>
       <Row>
-        <Col sm={2}>
+        <Col sm={4}>
         </Col>
-        <Col sm={10}>
-          {/* <h1>Welcome, Blanca Landin</h1>
-          <Row>
-            <div className="dashboard-div">
-              <p>Dashboard</p>
-            </div>
-          </Row>
-          <Row>
-            <Col>
-              <p>Dashboard</p>
-            </Col>
-            <Col>
-            </Col>
-          </Row>
-          <Row>
-            <Row>
-              <Col>
-                <Row>
-                  <p>Model name</p>
-                </Row>
-                <Row>
-
-                  <p>Pastries</p>
-                </Row>
-                <Row>
-                  <p>Reviews</p>
-                </Row>
-                <Row>
-                  <p>Orders</p>
-                </Row>
-              </Col>
-              <Col>
-                <p>Records</p>
-              </Col>
-              <Col>
-              </Col>
-            </Row>
-          </Row> */}
-          {pastryList && <List handlePastryForm={handlePastryForm} handleDeletePastry={handleDeletePastry}/>}
+        <Col sm={8}>
+          {dashboardNav && 
+            <DashboardNav 
+            handlePastries={handlePastries} 
+            pastry={pastry}
+            />}
+          {pastryList && 
+            <List
+             handlePastryForm={handlePastryForm} 
+             handleDeletePastry={handleDeletePastry} 
+             handleModal={handleModal}
+            />}
           {addPastry && <AddForm />}
+          {/* {pastryImg && filterPastry && <Modal filterPastry={filterPastry} />} */}
         </Col>
       </Row>
   

@@ -4,54 +4,49 @@ import { Col ,Row } from 'react-bootstrap';
 import {FaList} from 'react-icons/fa'
 import {AiFillFileAdd} from 'react-icons/ai'
 
-const List = ({ handlePastryForm, handleDeletePastry}) => {
+const List = ({ handlePastryForm, handleDeletePastry, handleModal}) => {
 
   const { pastry } = useFirestore('pastries');
 
   return ( 
-    <Row>
+    <div className="dashboard-nav">
+      <h1>List of Pastries</h1>
       <Row>
-        <h1>List of Pastries</h1>
-      </Row>
-      <Row>
-        <div className="admin-nav">
-          <p>Dashboard / Pastries</p>
+        <div className="dashboard-div">
+          <p>Dashboard / <span>Pastries</span></p>
         </div>
       </Row>
       <Row>
-        <div className="admin-nav-icons">
-          <p><FaList/></p>
-          <p onClick={handlePastryForm}><AiFillFileAdd/></p>
-        </div>
-      </Row>
-      <Row className="pastry-labels">
-        <Col>
-          <input type="checkbox"></input>
+        <Col sm={2} className="dashboard-col-1">
+          <div className="dashboard-icon">
+            <p> <FaList/> List</p>
+          </div>
+        </Col >
+        <Col className="dashboard-col-2">
+          <p onClick={handlePastryForm}> <AiFillFileAdd/> Add</p>
         </Col>
-        <Col>
+      </Row>
+      <Row>
+      <Col className="col-header">
           <p>Pastry</p>
         </Col>
-        <Col>
+        <Col className="col-header">
           <p>Celebration</p>
         </Col>
-        <Col>
+        <Col className="col-header">
           <p>Description</p>
         </Col>
-        <Col>
+        <Col className="col-header">
           <p>Url</p>
         </Col>
-        {/* <Col>
-          <p>Created at</p>
-        </Col> */}
       </Row>
-      <div className="temp">
-        {pastry.map((doc)=>(
+      <div className="pastry-list">
+         {pastry.map((doc)=>(
           <div key={doc.id}>
             <Row className="item-row">
               <Col xs={2}>
-                <button onClick={handleDeletePastry}>Delete</button>
+                <button onClick={()=>handleDeletePastry(doc.id)}>Delete</button>
                 <button>Edit</button>
-                <input type="checkbox" onClick={()=>handleDeletePastry(doc.id)} />
               </Col>
               <Col xs={2}>
                 <p>{doc.pastry}</p>
@@ -63,16 +58,13 @@ const List = ({ handlePastryForm, handleDeletePastry}) => {
                 <p>{doc.description}</p>
               </Col>
               <Col sm={3}>
-                <p>{doc.url}</p>
+                <p onClick={()=>handleModal(doc.id)}>{doc.url}</p>
               </Col>
-              {/* <Col>
-                <p>{doc.createdAt}</p>
-              </Col> */}
             </Row> 
           </div>
         ))}
       </div>
-    </Row>
+    </div>
    );
 }
  
